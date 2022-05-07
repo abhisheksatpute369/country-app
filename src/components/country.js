@@ -26,8 +26,8 @@ var Country = ()=>{
                                 <div id = "country-card">
                                 <img alt="country" id="countryflag" src={data.flag} ></img>
                                 <h3 id="countryname">{data.name}</h3>
-                                <p id="capital">{data.capital}</p>
-                                <p id="population">{data.population}</p>
+                                <p id="capital">Capital: {data.capital}</p>
+                                <p id="population">Population: {data.population}</p>
                                 </div>
                             )
                         })
