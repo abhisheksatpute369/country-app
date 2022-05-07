@@ -1,0 +1,32 @@
+#searchbar{
+    display: flex;
+    width:100%;
+    height: 60px;
+    border : 1px solid teal;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(2, 91, 91);
+}
+#search-input{
+    width: 30%;
+    height: 40%;
+    margin-right: 2%;
+    border: 1px solid rgb(3, 155, 155);
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    font-family: 'lato', sans-serif;
+}
+#search-btn{
+    width: 10%;
+    height: 50%;
+    background-color: rgb(3, 155, 155);
+    border: transparent;
+    color: white;
+    font-size: 18px;
+    font-family: 'lato', sans-serif;
+}
+#search-btn:hover{
+    background-color: white;
+    color: rgb(3, 155, 155)
+}

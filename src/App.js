@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+import Country from "./components/country";
+
 import './App.css';
 
 function App() {
   return (
-    
-    <div></div>
+   <div>
+      <Country />
+    </div>
   );
 }
 
