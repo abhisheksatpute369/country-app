@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./country.css"
+import Pagination from "./pagination";
 var Country = ()=>{
 
     const [country, setcountry] = useState([]);
+    const [loading, setloading] = useState(false);
+    const [currentpage, setcurrentpage] = useState(1);
+    const [postperpage, setpostperpage] = useState(20);
+    
     const getcountries = async () =>{
+        setloading(true);
         var res = await fetch("https://codejudge-question-artifacts-dev.s3.amazonaws.com/q-1709/data.json");
         setcountry(await res.json());
-        
+        setloading(false);
     }
 
     useEffect(()=>{
         getcountries();
     },[])
+
+    const indexoflastpage = currentpage * postperpage;
+    const indexoffirstpost = indexoflastpage - postperpage;
+    const currentpost = country.slice(indexoffirstpost, indexoflastpage);
+
+    const paginate = (pagenumber)=> setcurrentpage(pagenumber)
+
+    if(loading)
+    {
+        return <h2>Loading...</h2>
+    }
     return(
         <div> 
             <div id="container">
@@ -21,7 +38,7 @@ var Country = ()=>{
                 </div>
                 <div id = "countrydisplay">
                     {
-                        country.map((data)=>{
+                        currentpost.map((data)=>{
                             return(
                                 <div id = "country-card">
                                 <img alt="country" id="countryflag" src={data.flag} ></img>
@@ -35,7 +52,7 @@ var Country = ()=>{
                     
                     
                 </div>
-
+                <Pagination postperpage={postperpage} totalpost={country.length} paginate={paginate} />
             </div>
         </div>
     )

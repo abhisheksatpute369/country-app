@@ -76,3 +76,7 @@
     font-size: 15px;
     /* line-height: 0%; */
 }
+
+.pagination{
+    margin-top: 20px;
+}
