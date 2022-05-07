@@ -70,7 +70,7 @@
 
 #capital{
     font-size: 18px;
-    line-height: 0%;
+    /* line-height: 0%; */
 }
 #population{
     font-size: 15px;

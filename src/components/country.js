@@ -6,7 +6,7 @@ var Country = ()=>{
     const [country, setcountry] = useState([]);
     const [loading, setloading] = useState(false);
     const [currentpage, setcurrentpage] = useState(1);
-    const [postperpage, setpostperpage] = useState(20);
+    const [postperpage] = useState(20);
     
     const getcountries = async () =>{
         setloading(true);
@@ -42,7 +42,7 @@ var Country = ()=>{
                             return(
                                 <div id = "country-card">
                                 <img alt="country" id="countryflag" src={data.flag} ></img>
-                                <h3 id="countryname">{data.name}</h3>
+                                <h5 id="countryname">{data.name}</h5>
                                 <p id="capital">Capital: {data.capital}</p>
                                 <p id="population">Population: {data.population}</p>
                                 </div>
