@@ -1,3 +1,4 @@
+/* upper navbar div */
 #searchbar{
     display: flex;
     width:100%;
@@ -7,6 +8,8 @@
     align-items: center;
     background-color: rgb(2, 91, 91);
 }
+
+/* input bar style */
 #search-input{
     width: 30%;
     height: 40%;
@@ -17,10 +20,11 @@
     font-size: 18px;
     font-family: 'lato', sans-serif;
 }
+/* searcg button style  */
 #search-btn{
-    width: 10%;
+    width: 8%;
     height: 50%;
-    background-color: rgb(3, 155, 155);
+    background-color: rgb(3, 128, 128);
     border: transparent;
     color: white;
     font-size: 18px;
@@ -28,9 +32,10 @@
 }
 #search-btn:hover{
     background-color: white;
-    color: rgb(3, 155, 155)
+    color: rgb(2, 91, 91);
 }
 
+/* lower main body to display all countries */
 #countrydisplay{
     margin: auto;
     display: grid;
@@ -40,6 +45,8 @@
     border: 2px solid rgb(2, 91, 91);
     justify-content: space-around;
 }
+
+/* singlr card for country details  */
 #country-card{
     width: 100%;
     height: 290px;
@@ -47,4 +54,16 @@
     margin-top: 25px;
     padding: 4%;
     box-sizing: border-box;
+}
+
+#countryflag{
+    width: 100%;
+    height: 50%
+}
+
+#capital{
+    font-size: 18px;
+}
+#population{
+    font-size: 15px;
 }
