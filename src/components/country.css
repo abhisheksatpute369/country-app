@@ -92,3 +92,12 @@
     margin-top: 20px;
     margin-bottom: 100px;
 }
+
+/* for sorting method select tag  */
+#selectsort{
+    background: transparent;
+    border: none;
+    color : white;
+    background-color: rgb(2, 91, 91);
+    margin-left: 30px;
+}

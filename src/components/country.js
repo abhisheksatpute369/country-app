@@ -28,6 +28,18 @@ var Country = ()=>{
 
     const paginate = (pagenumber)=> setcurrentpage(pagenumber)
 
+    const handlesortmethod = () =>{
+        var result = document.getElementById("selectsort").value;
+        if(result === "low"){
+            setcountry(country.sort((a,b)=> a.population-b.population ))
+             
+        }
+        else if(result === "high"){
+            setcountry(country.sort((a,b)=> b.population - a.population))
+        }
+
+    }
+
     if(loading)
     {
         return <h2>Loading...</h2>
@@ -38,14 +50,19 @@ var Country = ()=>{
                 {/* these div for upper navbar */}
                 <div id = "searchbar">
                         <input type = "text" name="name" id="search-input" placeholder="Enter Country"></input>
-                        <button id="search-btn">Search</button>
+                        <button id="search-btn">Search</button>                
+                        <select id = "selectsort" onClick={handlesortmethod}>
+                            <option >Sort Population</option>
+                            <option value = {"low"}>Low to High</option>
+                            <option value={"high"}>High to Low</option>
+                        </select>
                 </div>
                 {/* these div is for country display  */}
                 <div id = "countrydisplay">
                     {
                         currentpost.map((data)=>{
                             return(
-                                <div id = "country-card">
+                                <div id = "country-card" key = {data.id}>
                                 <img alt="country" id="countryflag" src={data.flag} ></img>
                                 <h5 id="countryname">{data.name}</h5>
                                 <p id="capital">Capital: {data.capital}</p>
