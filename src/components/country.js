@@ -9,7 +9,10 @@ var Country = ()=>{
                         <button id="search-btn">Search</button>
                 </div>
                 <div id = "countrydisplay">
-
+                    <div id = "country-card">
+                        
+                    </div>
+                    
                 </div>
 
             </div>
