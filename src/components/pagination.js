@@ -27,12 +27,12 @@ const Pagination = ({postperpage, totalpost, paginate})=>{
     //        </ul>
     //    </div>
     <ReactPaginate 
-        previousLabel={"pre"}
-        nextLabel = {"next"}
-        breakLabel ={"||"}
+        previousLabel={"<<"}
+        nextLabel = {">>"}
+        // breakLabel ={"||"}
         pageCount ={Math.ceil(totalpost/postperpage)}
-        marginPagesDisplayed = {3}
-        pageRangeDisplayed = {2}
+        // marginPagesDisplayed = {3}
+        // pageRangeDisplayed = {2}
         onPageChange = {handlepageclick}
         containerClassName = {"pagination justify-content-center"}
         pageClassName = {"page-item"}

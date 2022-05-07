@@ -1,5 +1,6 @@
 /* upper navbar div */
 #searchbar{
+   
     display: flex;
     width:100%;
     height: 60px;
@@ -7,12 +8,15 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(2, 91, 91);
+    position: fixed;
+    top: 0;
+
 }
 
 /* input bar style */
 #search-input{
     width: 30%;
-    height: 40%;
+    height: 50%;
     margin-right: 2%;
     border: 1px solid rgb(3, 155, 155);
     background: transparent;
@@ -39,12 +43,14 @@
 #countrydisplay{
     margin: auto;
     display: grid;
-    margin-top: 30px;
+    margin-top: 80px;
     grid-template-columns: repeat(4, 22%);
     width: 70%;
     border: 2px solid rgb(2, 91, 91);
     justify-content: space-around;
     border-radius: 5px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
     
 }
 
@@ -65,9 +71,14 @@
 
 #countryflag{
     width: 100%;
-    height: 50%
+    height: 50%;
+    margin-bottom: 10px;
+    
 }
 
+#countryname{
+    color: rgb(1, 94, 94);
+}
 #capital{
     font-size: 18px;
     /* line-height: 0%; */
@@ -79,4 +90,5 @@
 
 .pagination{
     margin-top: 20px;
+    margin-bottom: 100px;
 }
