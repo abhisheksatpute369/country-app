@@ -101,6 +101,7 @@ var Country = ()=>{
         else{
             setnewname(result);
             document.getElementById("model").style.visibility = "visible";
+        
         }    
     }
 
