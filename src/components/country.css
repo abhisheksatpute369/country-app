@@ -101,3 +101,10 @@
     background-color: rgb(2, 91, 91);
     margin-left: 30px;
 }
+#selectfilter{
+    background: transparent;
+    border: none;
+    color : white;
+    background-color: rgb(2, 91, 91);
+    margin-left: 30px;
+}
