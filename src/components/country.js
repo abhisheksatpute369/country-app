@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./country.css"
+import "./country.css";
+import "./singlecountry.css";
 import Pagination from "./pagination";
+// import Singlecountry from "./singlecountry";
 
 var Country = ()=>{
 
@@ -8,6 +10,16 @@ var Country = ()=>{
     const [loading, setloading] = useState(false);
     const [currentpage, setcurrentpage] = useState(1);
     const [postperpage] = useState(20);
+    const [inputcountry, setinputcountry] = useState({name:""});
+    const [newname, setnewname] = useState([{
+        name : "india",
+        capital:"",
+        region:"",
+        subregion:"",
+        population:"",
+        demonym:"",
+        currencies:[{name:""}]
+    }]);
     
     // for fetching the country data from api 
     const getcountries = async () =>{
@@ -71,10 +83,31 @@ var Country = ()=>{
     }
 
     // thse is for handle the input country 
+    const handlechange = (e) =>{
+        const name = e.target.name;
+        const value = e.target.value;
+        setinputcountry({...inputcountry, [name]:value});
+    }
     const handlesubmit = (e) =>{
         e.preventDefault();
+        const newcountry = {...inputcountry};
+        const result = country.filter(obj => {
+                return obj.name === newcountry.name;
+              })
+        if(result.length === 0)
+        {
+            window.alert("Invalid city name");
+        }
+        else{
+            setnewname(result);
+            document.getElementById("model").style.visibility = "visible";
+        }    
     }
 
+    const handleclose = ()=>{
+        document.getElementById("model").style.visibility = "hidden";
+    }
+ 
     if(loading)
     {
         return <h2>Loading...</h2>
@@ -86,7 +119,7 @@ var Country = ()=>{
                 <div id = "searchbar">
                     <form onSubmit={handlesubmit} id ="searchform">
                     {/* <div id="searchdiv"> */}
-                    <input type = "text" name="name" id="search-input" placeholder="Enter Country"></input>
+                    <input type = "text" onChange={handlechange} value={inputcountry.name} name="name" id="search-input" placeholder="Enter Country"></input>
                     <button id="search-btn" type="submit">Search</button> 
                     {/* </div> */}
                     </form>
@@ -122,8 +155,52 @@ var Country = ()=>{
                 </div>
                 {/* for pagination buttons  */}
                 <Pagination postperpage={postperpage} totalpost={country.length} paginate={paginate} />
+                
             </div>
+
+            {/* these is for pop up model after search input  */}
+            <>
+            <div id="model">
+                <div id="close" onClick={handleclose}>Close</div>
+                <div id = "upperdiv">
+                    <h1>{newname[0].name}</h1>
+                </div>
+                <div id = "middlediv">
+                    <div id = "modelflag">
+                        <img src={newname[0].flag} width ="100%" height="100%" alt="flag"></img>
+                    </div>
+                    <div id = "modelmap"></div>
+                </div>
+                <div id= "lowerdiv">
+                    <div className="infocard" id = "info1">
+                        <h6>Capital</h6>
+                        <h6>{newname[0].capital}</h6>
+                    </div>
+                    <div className="infocard" id = "info2">
+                        <h6>Region</h6>
+                        <h6>{newname[0].region}</h6>
+                    </div>
+                    <div className="infocard" id = "info3">
+                        <h6>Subregion</h6>
+                        <h6>{newname[0].subregion}</h6>
+                    </div>
+                    <div className="infocard" id = "info4">
+                        <h6>Population</h6>                        
+                        <h6>{newname[0].population}</h6>
+                    </div>
+                    <div className="infocard" id = "info5">
+                        <h6>Demonym</h6>
+                        <h6>{newname[0].demonym}</h6>
+                    </div>
+                    <div className="infocard" id = "info6">
+                        <h6>Currency</h6>
+                        <h6>{newname[0].currencies[0].name}</h6>
+                    </div>
+                </div>
+            </div>
+        </>
         </div>
+        
     )
 }
 
