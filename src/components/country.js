@@ -170,7 +170,19 @@ var Country = ()=>{
                     <div id = "modelflag">
                         <img src={newname[0].flag} width ="100%" height="100%" alt="flag"></img>
                     </div>
-                    <div id = "modelmap"></div>
+                    <div id = "modelmap">
+                        <iframe
+                            src={`https://maps.google.com/maps?q=${newname[0].name}&t=&z=5&ie=UTF8&iwloc=&output=embed`}
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            aria-hidden="false"
+                            tabIndex="0"
+                            title="country"
+                        />
+                    </div>
                 </div>
                 <div id= "lowerdiv">
                     <div className="infocard" id = "info1">

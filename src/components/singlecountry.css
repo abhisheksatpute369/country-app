@@ -21,7 +21,7 @@
     height: 12%;
     text-align: center;
     overflow:auto;
-    scrollbar-color: rgb(1, 113, 113);
+    color: rgb(2, 94, 94);
 }
 /* these is for middle div of flag image and map  */
 #middlediv{
