@@ -97,7 +97,7 @@ var Country = ()=>{
               })
         if(result.length === 0)
         {
-            window.alert("Invalid city name");
+            window.alert("Invalid country name, Find country from country list button");
         }
         else{
             setnewname(result);

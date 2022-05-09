@@ -22,6 +22,7 @@ const Countrylist = ({country})=>{
         <div>
             <button id ="listbutton" onClick={handlelist}>Country List</button>
             <div id="listmodel">
+                <p id = "note">Only copy name and paste to input bar</p>
                 {
                     country.map((data)=>{
                         return(
