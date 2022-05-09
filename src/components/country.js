@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./country.css";
 import "./singlecountry.css";
 import Pagination from "./pagination";
+import Countrylist from "./countrylist";
 // import Singlecountry from "./singlecountry";
 
 var Country = ()=>{
@@ -101,6 +102,8 @@ var Country = ()=>{
         else{
             setnewname(result);
             document.getElementById("model").style.visibility = "visible";
+            // thse is for hide the county lis model 
+            document.getElementById("listmodel").style.visibility = "hidden";
         
         }    
     }
@@ -118,6 +121,7 @@ var Country = ()=>{
             <div id="container">
                 {/* these div for upper navbar */}
                 <div id = "searchbar">
+                    <Countrylist country={country}/>
                     <form onSubmit={handlesubmit} id ="searchform">
                     {/* <div id="searchdiv"> */}
                     <input type = "text" onChange={handlechange} value={inputcountry.name} name="name" id="search-input" placeholder="Enter Country"></input>
